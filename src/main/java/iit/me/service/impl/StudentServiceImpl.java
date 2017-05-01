@@ -1,11 +1,13 @@
 package iit.me.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import iit.me.entity.RequestEntity;
 import iit.me.repository.RequestRepository;
 import iit.me.service.StudentService;
 
+@Service
 public class StudentServiceImpl implements StudentService {
 	
 	RequestRepository requestRepository;
