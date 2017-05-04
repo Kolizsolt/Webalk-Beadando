@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class UserEntity {
+public class TeacherEntity extends UserEntity{
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -15,6 +15,7 @@ public class UserEntity {
 	private String lastName;
 	private String username;
 	private String pwd;
+	private Boolean isTeacher;
 	
 	
 	public long getId() {
@@ -46,6 +47,12 @@ public class UserEntity {
 	}
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
+	}
+	public Boolean getIsTeacher() {
+		return isTeacher;
+	}
+	public void setIsTeacher(Boolean isTeacher) {
+		this.isTeacher = isTeacher;
 	}
 
 }

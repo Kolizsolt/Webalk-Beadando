@@ -6,13 +6,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class StudentEntity {
+public class StudentEntity extends UserEntity{
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long studentId;
 	private String firstName;
 	private String lastName;
+	private String username;
+	private String pwd;
+	private Boolean isStudent;
 	
 	
 	public long getStudentId() {
@@ -32,6 +35,24 @@ public class StudentEntity {
 	}
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getPwd() {
+		return pwd;
+	}
+	public void setPwd(String pwd) {
+		this.pwd = pwd;
+	}
+	public Boolean getIsStudent() {
+		return isStudent;
+	}
+	public void setIsStudent(Boolean isStudent) {
+		this.isStudent = isStudent;
 	}
 	
 }

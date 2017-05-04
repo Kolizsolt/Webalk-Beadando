@@ -5,28 +5,33 @@ import org.springframework.stereotype.Service;
 
 import iit.me.entity.RequestEntity;
 import iit.me.repository.RequestRepository;
-import iit.me.service.StudentService;
+import iit.me.service.TeacherService;
 
 @Service
-public class StudentServiceImpl implements StudentService {
+public class TeacherServiceImpl implements TeacherService {
 	
 	RequestRepository requestRepository;
 
 	@Autowired
-	public StudentServiceImpl(RequestRepository requestRepository) {
+	public TeacherServiceImpl(RequestRepository requestRepository) {
 		super();
 		this.requestRepository = requestRepository;
 	}
 
 	@Override
-	public void submitRequest(RequestEntity newRequest) {
-		requestRepository.save(newRequest);
-	}
-
-	//one-to-many-t megnézni
-	@Override
 	public Iterable<RequestEntity> listRequests() {
 		return requestRepository.findAll();
 	}
+
+	
+	// comment adattag a requestbe a comment funkcióhoz(metódushoz)
+	
+	
+	// forwarded, accepted adattagok a requestbe, egy lista van
+	/*@Override
+	public void forwardRequest(RequestEntity frwdableRequest) {
+		// TODO Auto-generated method stub
+
+	}*/
 
 }
