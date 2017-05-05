@@ -11,6 +11,9 @@ public class RequestEntity {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long requestId;
+	private String comment;
+	private Boolean isForwarded;
+	private Boolean isAccepted;
 	private StudentEntity student;
 
 	
@@ -25,6 +28,24 @@ public class RequestEntity {
 	}
 	public void setStudent(StudentEntity student) {
 		this.student = student;
+	}
+	public String getComment() {
+		return comment;
+	}
+	public void setComment(String comment) {
+		this.comment = comment;
+	}
+	public Boolean getIsForwarded() {
+		return isForwarded;
+	}
+	public void setIsForwarded(Boolean isForwarded) {
+		this.isForwarded = isForwarded;
+	}
+	public Boolean getIsAccepted() {
+		return isAccepted;
+	}
+	public void setIsAccepted(Boolean isAccepted) {
+		this.isAccepted = isAccepted;
 	}
 
 }

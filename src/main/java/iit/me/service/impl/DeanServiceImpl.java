@@ -18,16 +18,16 @@ public class DeanServiceImpl implements DeanService {
 		this.requestRepository = requestRepository;
 	}
 
+	
 	@Override
 	public Iterable<RequestEntity> listRequests() {
 		return requestRepository.findAll();
 	}
 
-	// forwarded, accepted adattagok a requestbe, egy lista van
 	@Override
-	public void makeVerdict(RequestEntity verdictRequest) {
-		// TODO Auto-generated method stub
-
+	public void makeVerdict(long requestId) {
+		requestRepository.findOne(requestId).setIsAccepted(true);
+		requestRepository.save(requestRepository.findOne(requestId));
 	}
 	
 	//void addTemplate(TemplateEntity newTemplate){}

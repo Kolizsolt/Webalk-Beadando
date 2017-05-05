@@ -3,6 +3,8 @@ package iit.me.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,13 +23,20 @@ public class TeacherController {
 		this.teacherService = teacherService;
 	}
 	
+	
 	@GetMapping(path="", produces=MediaType.APPLICATION_JSON_VALUE)
 	Iterable<RequestEntity> listRequests(){
 		return teacherService.listRequests();
 	}
 	
-	//comment
+	@PutMapping(path="/{id}", consumes=MediaType.APPLICATION_JSON_VALUE)
+	void teacherComment(@PathVariable("id") long requestId, @PathVariable String comment){
+		teacherService.comment(requestId, comment);
+	}
 	
-	//forwardRequest
+	@PutMapping(path="/{id}", consumes=MediaType.APPLICATION_JSON_VALUE)
+	void forward(@PathVariable("id") long requestId){
+		teacherService.forwardRequest(requestId);
+	}
 
 }

@@ -8,6 +8,7 @@ import iit.me.entity.RequestEntity;
 public interface TeacherService {
 	
 	Iterable<RequestEntity> listRequests();
-	//void forwardRequest(RequestEntity frwdableRequest);
+	void comment(long requestId, String comm);
+	void forwardRequest(long requestId);
 
 }

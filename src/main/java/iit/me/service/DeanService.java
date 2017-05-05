@@ -8,7 +8,7 @@ import iit.me.entity.RequestEntity;
 public interface DeanService {
 	
 	Iterable<RequestEntity> listRequests();
-	void makeVerdict(RequestEntity verdictRequest);
+	void makeVerdict(long requestId);
 	//void addTemplate(TemplateEntity newTemplate);
 
 }

@@ -23,15 +23,16 @@ public class TeacherServiceImpl implements TeacherService {
 		return requestRepository.findAll();
 	}
 
+	@Override
+	public void comment(long requestId, String comm){
+		requestRepository.findOne(requestId).setComment(comm);
+		requestRepository.save(requestRepository.findOne(requestId));
+	}
 	
-	// comment adattag a requestbe a comment funkcióhoz(metódushoz)
-	
-	
-	// forwarded, accepted adattagok a requestbe, egy lista van
-	/*@Override
-	public void forwardRequest(RequestEntity frwdableRequest) {
-		// TODO Auto-generated method stub
-
-	}*/
+	@Override
+	public void forwardRequest(long requestId) {
+		requestRepository.findOne(requestId).setIsForwarded(true);
+		requestRepository.save(requestRepository.findOne(requestId));
+	}
 
 }
