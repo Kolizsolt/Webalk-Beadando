@@ -4,18 +4,28 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import iit.me.entity.RequestEntity;
+import iit.me.entity.TeacherEntity;
 import iit.me.repository.RequestRepository;
+import iit.me.repository.TeacherRepository;
 import iit.me.service.TeacherService;
 
 @Service
 public class TeacherServiceImpl implements TeacherService {
 	
 	RequestRepository requestRepository;
+	TeacherRepository teacherRepository;
 
 	@Autowired
-	public TeacherServiceImpl(RequestRepository requestRepository) {
+	public TeacherServiceImpl(RequestRepository requestRepository, TeacherRepository teacherRepository) {
 		super();
 		this.requestRepository = requestRepository;
+		this.teacherRepository = teacherRepository;
+	}
+
+	
+	@Override
+	public void newTeacher(TeacherEntity newTeacher) {
+		teacherRepository.save(newTeacher);
 	}
 
 	@Override

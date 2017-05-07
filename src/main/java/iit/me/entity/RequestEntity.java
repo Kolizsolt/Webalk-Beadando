@@ -11,10 +11,11 @@ public class RequestEntity {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long requestId;
+	private String name;
 	private String comment;
 	private Boolean isForwarded;
 	private Boolean isAccepted;
-	private StudentEntity student;
+	private long ownerId;
 
 	
 	public long getRequestId() {
@@ -23,11 +24,17 @@ public class RequestEntity {
 	public void setRequestId(long requestId) {
 		this.requestId = requestId;
 	}
-	public StudentEntity getStudent() {
-		return student;
+	public String getName() {
+		return name;
 	}
-	public void setStudent(StudentEntity student) {
-		this.student = student;
+	public void setName(String name) {
+		this.name = name;
+	}
+	public long getOwnerId() {
+		return ownerId;
+	}
+	public void setOwnerId(long ownerId) {
+		this.ownerId = ownerId;
 	}
 	public String getComment() {
 		return comment;

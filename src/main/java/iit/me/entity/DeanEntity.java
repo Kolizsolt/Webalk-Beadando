@@ -7,17 +7,17 @@ import javax.persistence.Id;
 
 @Entity
 public class DeanEntity extends UserEntity{
-	
+	/*
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
 	private String firstName;
 	private String lastName;
 	private String username;
-	private String pwd;
+	private String pwd;*/
 	private Boolean isDean;
 	
-	
+	/*
 	public long getId() {
 		return id;
 	}
@@ -47,7 +47,7 @@ public class DeanEntity extends UserEntity{
 	}
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
-	}
+	}*/
 	public Boolean getIsDean() {
 		return isDean;
 	}

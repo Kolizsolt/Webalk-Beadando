@@ -27,6 +27,7 @@ public class UserController {
 		this.userService = userService;
 	}
 	
+	
 	@GetMapping(path="", produces=MediaType.APPLICATION_JSON_VALUE)
 	Iterable<UserEntity> list(){
 		return userService.listUsers();

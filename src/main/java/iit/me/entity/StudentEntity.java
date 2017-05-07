@@ -7,17 +7,17 @@ import javax.persistence.Id;
 
 @Entity
 public class StudentEntity extends UserEntity{
-	
+	/*
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long studentId;
 	private String firstName;
 	private String lastName;
 	private String username;
-	private String pwd;
+	private String pwd;*/
 	private Boolean isStudent;
 	
-	
+	/*
 	public long getStudentId() {
 		return studentId;
 	}
@@ -47,7 +47,7 @@ public class StudentEntity extends UserEntity{
 	}
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
-	}
+	}*/
 	public Boolean getIsStudent() {
 		return isStudent;
 	}
