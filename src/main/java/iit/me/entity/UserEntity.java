@@ -1,5 +1,7 @@
 package iit.me.entity;
 
+import java.util.ArrayList;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,6 +17,7 @@ public class UserEntity {
 	private String lastName;
 	private String username;
 	private String pwd;
+	private ArrayList<String> role;
 	
 	
 	public long getId() {
@@ -46,6 +49,12 @@ public class UserEntity {
 	}
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
+	}
+	public ArrayList<String> getRole() {
+		return role;
+	}
+	public void setRole(ArrayList<String> role) {
+		this.role = role;
 	}
 
 }

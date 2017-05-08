@@ -12,5 +12,6 @@ public interface UserService {
 	void deleteUser(long id);
 	void editUser(long id, String newFirstName, String newLastName);
 	UserEntity findUser(long id);
+	UserEntity findUserByUsername(String username);
 
 }
