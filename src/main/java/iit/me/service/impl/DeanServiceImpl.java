@@ -34,6 +34,11 @@ public class DeanServiceImpl implements DeanService {
 	}
 	
 	@Override
+	public Iterable<DeanEntity> listDeans() {
+		return deanRepository.findAll();
+	}
+
+	@Override
 	public Iterable<RequestEntity> listRequests() {
 		return requestRepository.findAll();
 	}

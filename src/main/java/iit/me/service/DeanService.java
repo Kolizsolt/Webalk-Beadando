@@ -10,6 +10,7 @@ import iit.me.entity.TemplateEntity;
 public interface DeanService {
 	
 	void newDean(DeanEntity newDean);
+	Iterable<DeanEntity> listDeans();
 	Iterable<RequestEntity> listRequests();
 	RequestEntity findRequest(long requestId);
 	void acceptVerdict(long requestId);

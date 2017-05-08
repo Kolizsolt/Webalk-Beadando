@@ -37,6 +37,11 @@ public class StudentServiceImpl implements StudentService {
 	}
 
 	@Override
+	public Iterable<StudentEntity> listStudents() {
+		return studentRepository.findAll();
+	}
+
+	@Override
 	public void submitRequest(RequestEntity newRequest) {
 		requestRepository.save(newRequest);
 	}

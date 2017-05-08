@@ -29,6 +29,11 @@ public class TeacherServiceImpl implements TeacherService {
 	}
 
 	@Override
+	public Iterable<TeacherEntity> listTeachers() {
+		return teacherRepository.findAll();
+	}
+
+	@Override
 	public Iterable<RequestEntity> listRequests() {
 		return requestRepository.findAll();
 	}

@@ -9,6 +9,7 @@ import iit.me.entity.TeacherEntity;
 public interface TeacherService {
 	
 	void newTeacher(TeacherEntity newTeacher);
+	Iterable<TeacherEntity> listTeachers();
 	Iterable<RequestEntity> listRequests();
 	void comment(long requestId, String comm);
 	void forwardRequest(long requestId);

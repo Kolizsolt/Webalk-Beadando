@@ -12,6 +12,7 @@ import iit.me.entity.TemplateEntity;
 public interface StudentService {
 	
 	void newStudent(StudentEntity newStudent);
+	Iterable<StudentEntity> listStudents();
 	void submitRequest(RequestEntity newRequest);
 	Iterable<RequestEntity> listRequests();
 	List<RequestEntity> findByStudentId(long studentId);

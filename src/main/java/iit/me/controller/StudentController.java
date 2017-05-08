@@ -34,6 +34,11 @@ public class StudentController {
 		studentService.newStudent(newStudent);
 	}
 	
+	@GetMapping(path="", produces=MediaType.APPLICATION_JSON_VALUE)
+	Iterable<StudentEntity> students(){
+		return studentService.listStudents();
+	}
+	
 	@PostMapping(path="/request", consumes=MediaType.APPLICATION_JSON_VALUE)
 	void submitRequest(@RequestBody RequestEntity newRequest){
 		studentService.submitRequest(newRequest);
@@ -44,9 +49,9 @@ public class StudentController {
 		return studentService.listRequests();
 	}
 	
-	@GetMapping(path="", produces=MediaType.APPLICATION_JSON_VALUE)
-	List<RequestEntity> findByStudentId(@PathVariable long stdtId){
-		return studentService.findByStudentId(stdtId);
+	@GetMapping(path="/ownrequests/{id}", produces=MediaType.APPLICATION_JSON_VALUE)
+	List<RequestEntity> findByStudentId(@PathVariable("id") long studId){
+		return studentService.findByStudentId(studId);
 	}
 	
 	@GetMapping(path="/template", produces=MediaType.APPLICATION_JSON_VALUE)
@@ -55,7 +60,7 @@ public class StudentController {
 	}
 	
 	@GetMapping(path="/template/{id}", consumes=MediaType.APPLICATION_JSON_VALUE, produces=MediaType.APPLICATION_JSON_VALUE)
-	TemplateEntity findOneTemplate(@PathVariable long templateId){
+	TemplateEntity findOneTemplate(@PathVariable("id") long templateId){
 		return studentService.findTemplate(templateId);
 	}
 

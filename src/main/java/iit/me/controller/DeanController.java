@@ -34,6 +34,11 @@ public class DeanController {
 	}
 	
 	@GetMapping(path="", produces=MediaType.APPLICATION_JSON_VALUE)
+	Iterable<DeanEntity> deans(){
+		return deanService.listDeans();
+	}
+	
+	@GetMapping(path="/requests", produces=MediaType.APPLICATION_JSON_VALUE)
 	Iterable<RequestEntity> listRequests(){
 		return deanService.listRequests();
 	}

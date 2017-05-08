@@ -31,6 +31,11 @@ public class TeacherController {
 		teacherService.newTeacher(newTeacher);
 	}
 	
+	@GetMapping(path="", produces=MediaType.APPLICATION_JSON_VALUE)
+	Iterable<TeacherEntity> teachers(){
+		return teacherService.listTeachers();
+	}
+	
 	@GetMapping(path="/request", produces=MediaType.APPLICATION_JSON_VALUE)
 	Iterable<RequestEntity> listRequests(){
 		return teacherService.listRequests();
